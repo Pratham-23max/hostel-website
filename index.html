@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hostel Management</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: #f5f7fa;
+    }
+
+    /* NAVBAR */
+    nav {
+        background: #2c3e50;
+        padding: 15px;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    nav a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+    }
+
+    /* HERO SECTION */
+    .hero {
+        height: 90vh;
+        background: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2') no-repeat center/cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+        background: rgba(0,0,0,0.5);
+        padding: 20px;
+    }
+
+    section {
+        padding: 40px;
+        text-align: center;
+    }
+
+    /* CARDS */
+    .cards {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        background: white;
+        padding: 20px;
+        width: 250px;
+        border-radius: 10px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    /* FORM */
+    form {
+        max-width: 400px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    input, textarea, button {
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    button {
+        background: #2c3e50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    iframe {
+        width: 100%;
+        height: 300px;
+        border: none;
+    }
+
+    footer {
+        background: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 15px;
+    }
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h2>Hostel</h2>
+    <div>
+        <a href="#about">About</a>
+        <a href="#fees">Fees</a>
+        <a href="#leave">Leave</a>
+        <a href="#login">Login</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Welcome to Student Hostel</h1>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2>Hostel Facilities</h2>
+    <div class="cards">
+        <div class="card">WiFi Available</div>
+        <div class="card">24/7 Security</div>
+        <div class="card">Mess Facility</div>
+    </div>
+</section>
+
+<!-- FEES -->
+<section id="fees">
+    <h2>Hostel Fees</h2>
+    <div class="cards">
+        <div class="card">Room Rent: ₹30,000/year</div>
+        <div class="card">Mess: ₹20,000/year</div>
+        <div class="card">Security: ₹5,000</div>
+    </div>
+</section>
+
+<!-- LEAVE FORM -->
+<section id="leave">
+    <h2>Leave Application</h2>
+    <form onsubmit="submitForm(event)">
+        <input type="text" placeholder="Name" required>
+        <input type="date" required>
+        <textarea placeholder="Reason" required></textarea>
+        <button type="submit">Apply</button>
+    </form>
+</section>
+
+<!-- LOGIN -->
+<section id="login">
+    <h2>Student Login</h2>
+    <form onsubmit="login(event)">
+        <input type="text" id="user" placeholder="Username" required>
+        <input type="password" id="pass" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+</section>
+
+<!-- MAP -->
+<section>
+    <h2>Hostel Location</h2>
+    <iframe src="https://maps.google.com/maps?q=delhi&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Hostel Management System</p>
+</footer>
+
+<script>
+function submitForm(e) {
+    e.preventDefault();
+    alert("Leave Application Submitted!");
+}
+
+function login(e) {
+    e.preventDefault();
+    let user = document.getElementById("user").value;
+    let pass = document.getElementById("pass").value;
+
+    if(user === "admin" && pass === "1234") {
+        alert("Login Successful");
+    } else {
+        alert("Invalid Credentials");
+    }
+}
+</script>
+
+</body>
+</html>
